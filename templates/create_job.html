@@ -1,0 +1,8 @@
+<form action="{{ url_for('create_job') }}" method="post">
+    <input type="text" name="title" placeholder="Job Title" required><br>
+    <input type="text" name="company" placeholder="Company Name" required><br>
+    <textarea name="description" placeholder="Job Description" required></textarea><br>
+    <input type="checkbox" name="use_predicted_category" value="1"> Use Predicted Category: {{ predicted_category }}<br>
+    <input type="text" name="custom_category" placeholder="Custom Category"><br>
+    <button type="submit">Post</button>
+</form>

@@ -1,0 +1,11 @@
+{% extends "home.html" %}
+
+{% block content %}
+<h2>Post a Job - Step 1</h2>
+<form action="{{ url_for('create_job') }}" method="post">
+    <input type="text" name="title" placeholder="Job Title" required><br>
+    <input type="text" name="company" placeholder="Company Name" required><br>
+    <textarea name="description" placeholder="Job Description" required></textarea><br>
+    <button type="submit">Next</button>
+</form>
+{% endblock %}

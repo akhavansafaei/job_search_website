@@ -1,0 +1,23 @@
+{% extends "home.html" %}
+
+{% block content %}
+<h2>Post a Job - Step 2</h2>
+<form action="{{ url_for('create_job_step2') }}" method="post">
+    <input type="hidden" name="title" value="{{ title }}">
+    <input type="hidden" name="company" value="{{ company }}">
+    <input type="hidden" name="description" value="{{ description }}">
+    <p>Title: {{ title }}</p>
+    <p>Company: {{ company }}</p>
+    <p>Description: {{ description }}</p>
+    <label for="category">Category:</label>
+    <select name="category" required>
+        <option value="Accounting_Finance" {% if predicted_category == "Accounting_Finance" %}selected{% endif %}>Accounting_Finance</option>
+        <option value="Engineering" {% if predicted_category == "Engineering" %}selected{% endif %}>Engineering</option>
+        <option value="Healthcare_Nursing" {% if predicted_category == "Healthcare_Nursing" %}selected{% endif %}>Healthcare_Nursing</option>
+        <option value="Sales" {% if predicted_category == "Sales" %}selected{% endif %}>Sales</option>
+    </select><br>
+    <button type="submit">Post Job</button>
+</form>
+<a href="{{ url_for('home') }}">Home</a>
+<a href="{{ url_for('create_job') }}">Create Another Job</a>
+{% endblock %}
